@@ -1,0 +1,17 @@
+{
+    "name": "bytelovers/affise-php-client",
+    "description": "A client for Affise API",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.0",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Bytelovers\\Affiser\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
