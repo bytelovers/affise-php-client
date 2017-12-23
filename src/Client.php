@@ -25,9 +25,7 @@
             $this->setApiDomain($apiDomain);
             $this->setHeaders(['API-Key' => $aplKey]);
 
-            $this->setHttpClient(new GuzzleClient([
-                ['headers' => $this->getHeaders()],
-            ]));
+            $this->setHttpClient(new GuzzleClient(['headers' => $this->getHeaders()]));
         }
 
         public function api($class) {
@@ -38,7 +36,7 @@
         public function get($endpoint, $params = []) {
             $req = $this->buildUrl($endpoint, $params);
             $req = urldecode($req);
-
+            //dd($req);
             $res = $this->getHttpClient()->get($req);
             return $this->handleResponse($res);
         }
@@ -60,7 +58,6 @@
             if ($statusCode >= 200 && $statusCode < 300) {
                 return $body;
             }
-            dd($res->getHeaders());
             throw new \Exception($body->message, $statusCode);
         }
 
@@ -141,7 +138,7 @@
          */
         public function setHeaders(array $headers)
         {
-            $this->headers = $headers;
+            $this->headers = array_merge($this->headers, $headers);
         }
 
         /**
