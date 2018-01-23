@@ -36,7 +36,7 @@
         public function get($endpoint, $params = []) {
             $req = $this->buildUrl($endpoint, $params);
             $req = urldecode($req);
-            //dd($req);
+
             $res = $this->getHttpClient()->get($req);
             return $this->handleResponse($res);
         }

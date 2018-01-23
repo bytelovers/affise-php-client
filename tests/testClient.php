@@ -4,11 +4,14 @@
 
     use PHPUnit\Framework\TestCase;
     use Bytelovers\Affise\Client;
+    use Bytelovers\Affise\Api\Affiliate\Partner;
 
     class TestClient extends TestCase {
 
-        public function testAgpiVersion() {
+        public function testApi() {
             $affiseClient = new Client('a', 'a');
-            $this->assertEquals($affiseClient->getApiVersion(), '3.0');
+            $affiseClient = $affiseClient->api('Affiliate\Partner');
+
+            $this->assertInstanceOf(Partner::class, $affiseClient);
         }
     }
