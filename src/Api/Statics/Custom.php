@@ -6,6 +6,14 @@
     class Custom extends Base {
         protected $endpointBase = 'stats';
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
+        public function setEndpointBase(string $endpointBase) {
+            $this->endpointBase = $endpointBase;
+        }
+
         public function getCustom($params = []) {
 
             if (!array_key_exists('slice', $params) ||
@@ -14,7 +22,7 @@
             }
 
             return $this->get(implode('/', [
-                $this->endpointBase,
+                $this->endpointBase(),
                 'custom'
             ]), $params);
         }

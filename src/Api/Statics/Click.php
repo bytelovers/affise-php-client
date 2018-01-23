@@ -7,6 +7,14 @@
     class Click extends Base {
         protected $endpointBase = 'stats';
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
+        public function setEndpointBase(string $endpointBase) {
+            $this->endpointBase = $endpointBase;
+        }
+
 
         /**
          * Get clicks - Only for admin API-Key
@@ -22,7 +30,7 @@
             }
 
             return $this->get(implode('/', [
-                $this->endpointBase,
+                $this->getEndpointBase(),
                 'clicks'
             ]), $params);
         }

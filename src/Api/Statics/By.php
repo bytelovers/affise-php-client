@@ -13,6 +13,14 @@
     class By extends Base {
         protected $endpointBase = 'stats';
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
+        public function setEndpointBase(string $endpointBase) {
+            $this->endpointBase = $endpointBase;
+        }
+
         public function getByDate($params = []) {
             return $this->get(implode('/', [
                 $this->getEndpointBase(),

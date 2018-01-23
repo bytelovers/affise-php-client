@@ -7,7 +7,18 @@
     class Partner extends Base {
         protected $endpointBase = 'partner';
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
+        public function setEndpointBase(string $endpointBase) {
+            $this->endpointBase = $endpointBase;
+        }
+
         public function getOfferList($params = []) {
-            return $this->get($this->endpointBase . '/offers', $params);
+            return $this->get(implode('/', [
+                $this->endpointBase(),
+                'offers'
+            ]), $params);
         }
     }
