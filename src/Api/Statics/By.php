@@ -11,7 +11,7 @@
     use Bytelovers\Affise\Base;
 
     class By extends Base {
-        protected $endpointBase = 'stats';
+        protected $endpointBase = "stats";
 
         public function getEndpointBase(): string {
             return $this->endpointBase;
@@ -22,30 +22,30 @@
         }
 
         public function getByDate($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbydate'
+                "getbydate"
             ]), $params);
         }
 
         public function getByHour($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbyhour'
+                "getbyhour"
             ]), $params);
         }
 
         public function getBySub($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbysub'
+                "getbysub"
             ]), $params);
         }
 
         public function getByOffer($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbyprogram'
+                "getbyprogram"
             ]), $params);
         }
 
@@ -56,9 +56,9 @@
          * @return mixed
          */
         public function getByAdvertiser($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbyadvertiser'
+                "getbyadvertiser"
             ]), $params);
         }
 
@@ -70,9 +70,9 @@
          * @return mixed
          */
         public function getByAffiliate($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbypartner'
+                "getbypartner"
             ]), $params);
         }
 
@@ -83,65 +83,65 @@
          * @return mixed
          */
         public function getByAffiliateAndDate($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbypartnerbydate'
+                "getbypartnerbydate"
             ]), $params);
         }
 
         public function getByCountry($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbycountries'
+                "getbycountries"
             ]), $params);
         }
 
         public function getByBrowser($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbybrowsers'
+                "getbybrowsers"
             ]), $params);
         }
 
         public function getByOs($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbyos'
+                "getbyos"
             ]), $params);
         }
 
         public function getByOsVersion($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbyversions'
+                "getbyversions"
             ]), $params);
         }
 
         public function getByGoal($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbygoal'
+                "getbygoal"
             ]), $params);
         }
 
         public function getByCity($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbycities'
+                "getbycities"
             ]), $params);
         }
 
         public function getByDevice($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbydevices'
+                "getbydevices"
             ]), $params);
         }
 
         public function getByDeviceModel($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'getbydevicemodels'
+                "getbydevicemodels"
             ]), $params);
         }
 
@@ -152,9 +152,9 @@
          * @return mixed
          */
         public function findStubs($params = []) {
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'find-stubs'
+                "find-stubs"
             ]), $params);
         }
 
@@ -167,14 +167,14 @@
          */
         public function getByServerPostback($params = []) {
 
-            if (!array_key_exists('date_from', $params) ||
-                !array_key_exists('date_to', $params)) {
-                throw new \Exception('Mandatory fields not filled');
+            if (!array_key_exists("date_from", $params) ||
+                !array_key_exists("date_to", $params)) {
+                throw new \Exception("Mandatory fields not filled");
             }
 
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'serverpostbacks'
+                "serverpostbacks"
             ]), $params);
         }
 
@@ -186,14 +186,14 @@
          */
         public function getByAffiliatePostback($params = []) {
 
-            if (!array_key_exists('date_from', $params) ||
-                !array_key_exists('date_to', $params)) {
-                throw new \Exception('Mandatory fields not filled');
+            if (!array_key_exists("date_from", $params) ||
+                !array_key_exists("date_to", $params)) {
+                throw new \Exception("Mandatory fields not filled");
             }
 
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->getEndpointBase(),
-                'affiliatepostbacks'
+                "affiliatepostbacks"
             ]), $params);
         }
     }

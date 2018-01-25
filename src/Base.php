@@ -17,8 +17,8 @@
         }
 
         //TODO: Implement
-        public function post($path, $params = []) {
-            throw new \Exception('Method not implemented');
+        public function post($path, $data) {
+            return $this->getHttpClient()->post($path, $data);
         }
 
         /**

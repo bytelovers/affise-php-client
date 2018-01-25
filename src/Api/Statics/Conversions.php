@@ -4,7 +4,7 @@
     use Bytelovers\Affise\Base;
 
     class Conversion extends Base {
-        protected $endpointBase = 'stats';
+        protected $endpointBase = "stats";
 
         public function getEndpointBase(): string {
             return $this->endpointBase;
@@ -16,9 +16,9 @@
 
         public function getConversions($params = []) {
 
-            return $this->get(implode('/', [
+            return $this->get(implode("/", [
                 $this->endpointBase(),
-                'conversions'
+                "conversions"
             ]), $params);
         }
     }

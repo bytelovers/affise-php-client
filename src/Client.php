@@ -41,6 +41,14 @@
             return $this->handleResponse($res);
         }
 
+        public function post($endpoint, $data = []) {
+            $res = $this->getHttpClient()->post(
+                $endpoint,
+                ['body' => $data]
+            );
+            return $this->handleResponse($res);
+        }
+
         private function buildUrl($endpoint, $params) {
             $url = sprintf($this->apiUrl, $this->getApiDomain(), $this->getApiVersion(), $endpoint);
 
