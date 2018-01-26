@@ -3,7 +3,7 @@
 
     use Bytelovers\Affise\Api;
 
-    class Conversion extends Admin {
+    class Advertiser extends Admin {
         protected $endpointBase = "advertiser";
 
         public function getAdvertiserList() {
