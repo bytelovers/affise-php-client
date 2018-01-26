@@ -49,6 +49,13 @@
             return $this->handleResponse($res);
         }
 
+        public function delete($endpoint) {
+            $res = $this->getHttpClient()->delete(
+                $endpoint
+            );
+            return $this->handleResponse($res);
+        }
+
         private function buildUrl($endpoint, $params) {
             $url = sprintf($this->apiUrl, $this->getApiDomain(), $this->getApiVersion(), $endpoint);
 
