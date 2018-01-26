@@ -1,13 +1,14 @@
 <?php
     namespace Bytelovers\Affise\Api\Admin\Offer;
 
-    namespace Bytelovers\Affise\Api\Admin;
+    use Bytelovers\Affise\Api;
 
     class Offer extends Admin {
+        protected $endpointBase = "offer";
+
         public function addOffer($data) {
             $this->post(implode("/", [
-                $this->getEndpointAdminBase(),
-                "offer"
+                $this->getEndpointAdminBase()
             ]),
             $data);
         }
@@ -19,7 +20,6 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
-                "offer",
                 $id
             ]),
             $data);
@@ -32,7 +32,6 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
-                "offer",
                 "delete"
             ]),
             ['offer_id' => [$id]]);
