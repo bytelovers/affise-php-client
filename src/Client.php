@@ -42,8 +42,9 @@
         }
 
         public function post($endpoint, $data = []) {
+            $url = $this->buildUrl($endpoint);
             $res = $this->getHttpClient()->post(
-                $endpoint,
+                $url,
                 ['form_params' => $data]
             );
             return $this->handleResponse($res);
@@ -56,10 +57,10 @@
             return $this->handleResponse($res);
         }
 
-        private function buildUrl($endpoint, $params) {
+        private function buildUrl($endpoint, $params = null) {
             $url = sprintf($this->apiUrl, $this->getApiDomain(), $this->getApiVersion(), $endpoint);
 
-            if ($params) {
+            if (!is_null($params)) {
                 $url .= '?' . http_build_query($params);
             }
 
