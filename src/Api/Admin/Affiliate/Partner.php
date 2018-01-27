@@ -7,9 +7,14 @@
     class Partner extends Admin {
         protected $endpointBase = "partner";
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
         public function getAffiliateList($params = []) {
             return $this->get(implode("/", [
-                $this->endpointAdminBase() . "s",
+                $this->getEndpointAdminBase() . "s",
+                $this->getEndpointBase(),
             ]),
             $params);
         }
@@ -19,7 +24,8 @@
                 throw new \Exception("The param EMAIL is required");
             }
             return $this->post(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
             ]),
             $data);
         }
@@ -29,7 +35,8 @@
                 throw new \Exception("The param ID is required");
             }
             return $this->post(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 $affiliateId
             ]),
             $data);
@@ -40,18 +47,20 @@
                 throw new \Exception("The param ID is required");
             }
             return $this->post(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "password",
                 $affiliateId
-            ]));
+            ]), null);
         }
 
         public function addPostback($data) {
-            if (!data["url"]) {
+            if (!$data["url"]) {
                 throw new \Exception("The param URL is required");
             }
             return $this->post(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "postback"
             ]),
             $data);
@@ -62,7 +71,8 @@
                 throw new \Exception("The param ID is required");
             }
             return $this->post(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "postback",
                 $postbackId
             ]),
@@ -74,7 +84,8 @@
                 throw new \Exception("The param ID is required");
             }
             return $this->delete(implode("/", [
-                $this->endpointAdminBase(),
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "postback",
                 $postbackId,
                 "remove"

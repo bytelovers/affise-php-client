@@ -6,9 +6,14 @@
     class Conversion extends Admin {
         protected $endpointBase = "conversion";
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
         public function addConversion($data) {
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "import"
             ]),
             $data);
@@ -21,6 +26,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "edit",
 
             ]),

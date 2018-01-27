@@ -6,9 +6,14 @@
     class Advertiser extends Admin {
         protected $endpointBase = "advertiser";
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
         public function getAdvertiserList() {
             $this->get(implode("/", [
-                $this->getEndpointAdminBase() . "s"
+                $this->getEndpointAdminBase() . "s",
+                $this->getEndpointBase()
             ]));
         }
 
@@ -19,6 +24,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase()
             ]),
             $data);
         }
@@ -30,6 +36,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 $advertiserId
             ]),
             $data);
@@ -42,9 +49,10 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 $advertiserId,
                 "sendpass"
-            ]));
+            ]), null);
         }
 
         public function enableAffiliate($data) {
@@ -54,6 +62,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "enable-affiliate"
             ]),
             $data);
@@ -66,6 +75,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "disable-affiliate"
             ]),
             $data);

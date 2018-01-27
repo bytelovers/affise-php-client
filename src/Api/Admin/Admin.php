@@ -12,8 +12,7 @@
 
         public function getAdminEndpointBase(): string {
             return implode("/", [
-                $this->getEndpointAdminBase(),
-                $this->getEndpointBase()
+                $this->getEndpointAdminBase()
             ]);
         }
     }

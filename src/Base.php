@@ -21,6 +21,11 @@
             return $this->getHttpClient()->post($path, $data);
         }
 
+        //TODO: Implement
+        public function delete($path) {
+            return $this->getHttpClient()->delete($path);
+        }
+
         /**
          * @return mixed
          */

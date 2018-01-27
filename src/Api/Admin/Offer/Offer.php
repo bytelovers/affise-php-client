@@ -6,9 +6,14 @@
     class Offer extends Admin {
         protected $endpointBase = "offer";
 
+        public function getEndpointBase(): string {
+            return $this->endpointBase;
+        }
+
         public function addOffer($data) {
             $this->post(implode("/", [
-                $this->getEndpointAdminBase()
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase()
             ]),
             $data);
         }
@@ -20,6 +25,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 $id
             ]),
             $data);
@@ -32,6 +38,7 @@
 
             $this->post(implode("/", [
                 $this->getEndpointAdminBase(),
+                $this->getEndpointBase(),
                 "delete"
             ]),
             ['offer_id' => [$id]]);
