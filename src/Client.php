@@ -44,7 +44,7 @@
         public function post($endpoint, $data = []) {
             $res = $this->getHttpClient()->post(
                 $endpoint,
-                ['body' => $data]
+                ['form_params' => $data]
             );
             return $this->handleResponse($res);
         }
