@@ -2,7 +2,7 @@
 
     namespace Bytelovers\Affise\Api\Admin\Affiliate;
 
-    use Bytelovers\Affise\Api;
+    use Bytelovers\Affise\Api\Admin;
 
     class Partner extends Admin {
         protected $endpointBase = "partner";

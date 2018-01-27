@@ -1,7 +1,7 @@
 <?php
     namespace Bytelovers\Affise\Api\Admin\Conversion;
 
-    use Bytelovers\Affise\Api;
+    use Bytelovers\Affise\Api\Admin;
 
     class Conversion extends Admin {
         protected $endpointBase = "conversion";
