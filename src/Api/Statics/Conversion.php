@@ -17,7 +17,7 @@
         public function getConversions($params = []) {
 
             return $this->get(implode("/", [
-                $this->endpointBase(),
+                $this->getEndpointBase(),
                 "conversions"
             ]), $params);
         }

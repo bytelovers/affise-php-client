@@ -22,7 +22,7 @@
             }
 
             return $this->get(implode("/", [
-                $this->endpointBase(),
+                $this->getEndpointBase(),
                 "custom"
             ]), $params);
         }

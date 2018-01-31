@@ -17,7 +17,7 @@
 
         public function getOfferList($params = []) {
             return $this->get(implode("/", [
-                $this->endpointBase(),
+                $this->getEndpointBase(),
                 "offers"
             ]), $params);
         }
