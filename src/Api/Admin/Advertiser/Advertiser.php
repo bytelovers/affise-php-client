@@ -1,7 +1,7 @@
 <?php
     namespace Bytelovers\Affise\Api\Admin\Advertiser;
 
-    use Bytelovers\Affise\Api\Admin;
+    use Bytelovers\Affise\Api\Admin\Admin;
 
     class Advertiser extends Admin {
         protected $endpointBase = "advertiser";

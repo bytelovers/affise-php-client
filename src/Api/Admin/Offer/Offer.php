@@ -1,7 +1,7 @@
 <?php
     namespace Bytelovers\Affise\Api\Admin\Offer;
 
-    use Bytelovers\Affise\Api\Admin;
+    use Bytelovers\Affise\Api\Admin\Admin;
 
     class Offer extends Admin {
         protected $endpointBase = "offer";

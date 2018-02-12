@@ -1,5 +1,5 @@
 <?php
-    namespace Bytelovers\Affise\Api;
+    namespace Bytelovers\Affise\Api\Admin;
 
     use Bytelovers\Affise\Base;
 
