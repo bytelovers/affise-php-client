@@ -19,6 +19,15 @@
             $data);
         }
 
+        public function addConversions($data) {
+            $this->post(implode("/", [
+                $this->getEndpointAdminBase(),
+                $this->getEndpointBase() . "s",
+                "import"
+            ]),
+            $data);
+        }
+
         public function updateConversion($data) {
             if (!$data["ids"]) {
                 throw new \Exception("The param ID is required");
