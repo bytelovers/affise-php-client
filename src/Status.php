@@ -11,7 +11,7 @@
     }
 
     abstract class StatusNames {
-        const CONFIRMED     = 'cofirmed';
+        const CONFIRMED     = 'confirmed';
         const PENDING       = 'pending';
         const DECLINED      = 'declined';
         const NOT_FOUND     = 'not_found';
